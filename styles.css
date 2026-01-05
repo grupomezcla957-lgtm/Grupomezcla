@@ -63,6 +63,30 @@
     .nav__menu a{color:#ffffff;text-decoration:none;opacity:0.95}
     .nav__menu a:hover{opacity:1}
 
+    /* Opción activa del menú (escritorio) */
+    .nav__menu a.active{
+      color:var(--accent);
+      font-weight:700;
+      position:relative;
+      opacity:1;
+    }
+    .nav__menu a.active::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:-8px;
+      height:3px;border-radius:3px;background:var(--accent);
+      transform-origin:center;transform:scaleX(1);
+    }
+
+    /* Opción activa en el menú móvil */
+    .mobile-panel a.active{
+      color:var(--accent);
+      font-weight:700;
+      background:rgba(240,180,58,0.08);
+      border-radius:6px;
+      padding-left:6px;
+    }
+
     .nav__actions{display:flex;align-items:center;gap:14px}
 
     /* Botón "hamburger" para móvil (oculto en escritorio) */
