@@ -32,13 +32,301 @@
     // Marca la opción del menú activa según la URL actual
     function markActiveMenu(){
       const links = document.querySelectorAll('.nav__menu a, .mobile-panel a');
-      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      // Decodificar el pathname para comparar nombres de archivo con espacios u otros caracteres
+      const rawPath = location.pathname.split('/').pop() || 'index.html';
+      const path = decodeURIComponent(rawPath).toLowerCase();
       links.forEach(a => {
-        const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
-        // Comparar por el nombre del archivo; también intentar includes sobre href completo
-        const isActive = href === path || (href && location.href.toLowerCase().endsWith(href));
+        const rawHref = (a.getAttribute('href') || '').split('/').pop() || '';
+        const href = decodeURIComponent(rawHref).toLowerCase();
+        // Comparar por el nombre del archivo; también intentar endsWith sobre href completo
+        const isActive = (href && href === path) || (href && location.href.toLowerCase().endsWith(encodeURI(href)));
         a.classList.toggle('active', isActive);
+        if(isActive){
+          a.setAttribute('aria-current','page');
+        } else {
+          a.removeAttribute('aria-current');
+        }
       });
+    }
+
+    /* ============================
+       Internacionalización simple (cliente)
+       - Traducciones en memoria para 'es' y 'en'
+       - Aplica texto a links del menú (por href) y a elementos con `data-i18n`
+       - Guarda la preferencia en localStorage
+    */
+    const translations = {
+      es: {
+        menu: {
+          'index.html':'Inicio',
+          'quienes somos.html':'¿Quiénes somos?',
+          'nuestros servicios.html':'Nuestros servicios',
+          'ingenierias.html':'Ingenierías',
+          'proyectos.html':'Proyectos | Construcción',
+          'telecomunicaciones.html':'Telecomunicaciones',
+          'contacto.html':'Contacto',
+          'contacto':'Contacto'
+        },
+          'page.aboutTitle':'¿Quiénes somos?',
+          'page.mission':'Misión',
+          'page.vision':'Visión',
+          'page.values':'Nuestros Valores',
+          'page.contactTitle':'Contacto',
+          'contact.emailLabel':'Email:',
+          'contact.officeLabel':'Oficina:',
+          'contact.cellLabel':'Cel:',
+          'footer.linksTitle':'Enlaces',
+          'brand.name':'Grupo Mexcla & Asociados',
+          'brand.sub':'Innovación en arquitectura, ingeniería y telecomunicaciones',
+          'footer.link.home':'Inicio',
+          'footer.link.about':'¿Quiénes somos?',
+          'footer.link.services':'Servicios',
+          'footer.link.projects':'Proyectos',
+          'footer.link.contact':'Contacto',
+          'footer.contactTitle':'Contacto',
+          'footer.description':'Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.',
+          'about.intro':'Grupo Mexcla y Asociados es una empresa 100% mexicana con más de 10 años de experiencia, especializada en construcción, gestión de proyectos bajo metodologías de clase mundial, y desarrollo de proyectos de ingeniería y diseño en redes de fibra óptica y telecomunicaciones. Nuestro equipo multidisciplinario está conformado por arquitectos e ingenieros de diversas especialidades, lo que nos permite ofrecer soluciones integrales, eficientes y de alta calidad. Comprometidos con la innovación y la excelencia operativa, garantizamos resultados sólidos que impulsan la conectividad y el desarrollo en México.',
+          'about.missionText':'Somos una empresa mexicana especializada en brindar servicios de construcción civiles, arquitectónicos y telecomunicaciones. Brindando servicios de consultoría IT para el diseño de soluciones, También consultoría en Administración de Proyectos, estamos constituidos como un equipo de trabajo especializado con amplia experiencia y comprometido en alcanzar la satisfacción total de nuestros clientes.',
+          'about.visionText':'Somos una empresa mexicana especializada en brindar servicios de construcción civiles, arquitectónicos y telecomunicaciones. Brindando servicios de consultoría IT para el diseño de soluciones, También consultoría en Administración de Proyectos, estamos constituidos como un equipo de trabajo especializado con amplia experiencia y comprometido en alcanzar la satisfacción total de nuestros clientes.',
+          'about.valuesAlt':'Imagen de nuestros valores',
+          'value.honesty':'HONESTIDAD',
+          'value.quality':'CALIDAD',
+          'value.productivity':'PRODUCTIVIDAD',
+          'value.professionalism':'PROFESIONALISMO',
+          'value.trust':'CONFIANZA',
+          'page.engineeringTitle':'Ingenierías',
+          'eng.card1':'Cableado estructurado',
+          'eng.card2':'Cálculo estructural',
+          'eng.card3':'Media tensión',
+          'eng.card4':'Fibra óptica',
+          'page.servicesTitle':'Nuestros servicios',
+          'services.intro':'Somos una empresa 100% mexicana dedicada a la construcción de obra civil, arquitectura, ingeniería y telecomunicaciones.',
+          'services.architecture':'Arquitectura',
+          'services.civil':'Ingeniería civil',
+          'services.visualization':'Visualización digital',
+          'services.telecom':'Telecomunicaciones',
+          'services.methodsTitle':'Desarrollo de proyectos con metodologías:',
+          'services.toolsTitle':'Desarrollo de proyectos con:',
+          'services.arch.item1':'Proyecto conceptual',
+          'services.arch.item2':'Anteproyecto',
+          'services.arch.item3':'Proyecto ejecutivo',
+          'services.arch.item4':'Diseño de interiores',
+          'services.civil.item1':'Cálculo estructural',
+          'services.civil.item2':'Memorias de cálculo',
+          'services.civil.item3':'Proyecto estructural',
+          'services.civil.item4':'Ingenierías MEP',
+          'services.vis.item1':'Renders',
+          'services.vis.item2':'Recorridos virtuales',
+          'services.vis.item3':'Fotogrametría con drone',
+          'services.telecom.item1':'Diseño de redes de fibra óptica',
+          'services.telecom.item2':'Cableado estructurado',
+          'services.valueEngineering':'Ingenierias de valor',
+          'services.methods.pmi':'PMI',
+          'services.methods.scrum':'SCRUM',
+          'services.methods.lean':'LEAN',
+          'services.tools.revit':'Revit + BIM',
+          'services.featuredAlt':'Imagen destacada de servicio',
+          'page.projectsTitle':'Proyectos',
+          'project.subtitle.industrial':'Nave industrial',
+          'project.subtitle.commercial':'Comercial',
+          'project.label.location':'Ubicación:',
+          'project.label.area':'Área:',
+          'project.label.year':'Año de proyecto:',
+          'page.telecomTitle':'Telecomunicaciones',
+          'project.subtitle.cabling':'Cableado estructurado',
+            'project.subtitle.fiber':'Instalación de fibra',
+              'project.name.stcmetro':'STC METRO',
+              'project.name.estevezj':'Estevez J',
+              'project.name.design':'Diseño de proyectos',
+              'project.name.acambay':'Acambay',
+              'project.name.tlatlauquitepec':'Tlatlauquitepec',
+              'project.name.atizapan':'Atizapán',
+              'project.name.insurgentes':'Insurgentes 414',
+              'project.name.iztaccihuatl':'Iztaccihuatl 6',
+              'project.name.montevideo':'Montevideo 211',
+              'project.name.pabellon':'Pabellon Metepec'
+      },
+      en: {
+        menu: {
+          'index.html':'Home',
+          'quienes somos.html':'About us',
+          'nuestros servicios.html':'Our services',
+          'ingenierias.html':'Engineering',
+          'proyectos.html':'Projects | Construction',
+          'telecomunicaciones.html':'Telecommunications',
+          'contacto.html':'Contact',
+          'contacto':'Contact'
+        },
+        'page.aboutTitle':'About us',
+        'page.mission':'Mission',
+        'page.vision':'Vision',
+        'page.values':'Our Values',
+        'page.contactTitle':'Contact',
+        'contact.emailLabel':'Email:',
+        'contact.officeLabel':'Office:',
+        'contact.cellLabel':'Mobile:',
+        'footer.linksTitle':'Links',
+        'brand.name':'Grupo Mexcla & Asociados',
+        'brand.sub':'Innovation in architecture, engineering and telecommunications',
+        'footer.link.home':'Home',
+        'footer.link.about':'About us',
+        'footer.link.services':'Services',
+        'footer.link.projects':'Projects',
+        'footer.link.contact':'Contact',
+        'footer.contactTitle':'Contact',
+        'footer.description':'We are a team with 10 years of experience delivering integrated projects across Mexico. We provide design, engineering and construction solutions.',
+        'about.intro':'Grupo Mexcla and Associates is a 100% Mexican company with over 10 years of experience, specialized in construction, project management using world-class methodologies, and the development of engineering and design projects in fiber optic networks and telecommunications. Our multidisciplinary team consists of architects and engineers from various specialties, allowing us to offer comprehensive, efficient, and high-quality solutions. Committed to innovation and operational excellence, we guarantee solid results that drive connectivity and development in Mexico.',
+        'about.missionText':'We are a Mexican company specialized in providing civil, architectural, and telecommunications construction services. We offer IT consulting services for solution design, as well as consulting in Project Management. We are established as a specialized work team with extensive experience, committed to achieving total customer satisfaction.',
+        'about.visionText':'We are a Mexican company specialized in providing civil, architectural, and telecommunications construction services. We offer IT consulting services for solution design, as well as consulting in Project Management. We are established as a specialized work team with extensive experience, committed to achieving total customer satisfaction.',
+        'about.valuesAlt':'Our values image',
+        'value.honesty':'HONESTY',
+        'value.quality':'QUALITY',
+        'value.productivity':'PRODUCTIVITY',
+        'value.professionalism':'PROFESSIONALISM',
+        'value.trust':'TRUST',
+        'page.engineeringTitle':'Engineering',
+        'eng.card1':'Structured Cabling',
+        'eng.card2':'Structural Calculation',
+        'eng.card3':'Medium Voltage',
+        'eng.card4':'Fiber Optic',
+        'page.servicesTitle':'Our services',
+        'services.intro':'We are a 100% Mexican company dedicated to civil construction, architecture, engineering and telecommunications.',
+        'services.architecture':'Architecture',
+        'services.civil':'Civil engineering',
+        'services.visualization':'Digital visualization',
+        'services.telecom':'Telecommunications',
+        'services.methodsTitle':'Project development with methodologies:',
+        'services.toolsTitle':'Project development with:',
+        'services.arch.item1':'Conceptual design',
+        'services.arch.item2':'Preliminary design',
+        'services.arch.item3':'Construction documents',
+        'services.arch.item4':'Interior design',
+        'services.civil.item1':'Structural calculation',
+        'services.civil.item2':'Calculation reports',
+        'services.civil.item3':'Structural project',
+        'services.civil.item4':'MEP engineering',
+        'services.vis.item1':'Renders',
+        'services.vis.item2':'Virtual tours',
+        'services.vis.item3':'Drone photogrammetry',
+        'services.telecom.item1':'Fiber optic network design',
+        'services.telecom.item2':'Structured cabling',
+        'services.valueEngineering':'Value engineering',
+        'services.methods.pmi':'PMI',
+        'services.methods.scrum':'SCRUM',
+        'services.methods.lean':'LEAN',
+        'services.tools.revit':'Revit + BIM',
+        'services.featuredAlt':'Featured service image',
+        'page.projectsTitle':'Projects',
+        'project.subtitle.industrial':'Industrial building',
+        'project.subtitle.commercial':'Commercial',
+        'project.label.location':'Location:',
+        'project.label.area':'Area:',
+        'project.label.year':'Project year:',
+        'page.telecomTitle':'Telecommunications',
+        'project.subtitle.cabling':'Structured Cabling',
+        'project.subtitle.fiber':'Fiber installation',
+        'project.name.stcmetro':'STC METRO',
+        'project.name.estevezj':'Estevez J',
+        'project.name.design':'Project design',
+        'project.name.acambay':'Acambay',
+        'project.name.tlatlauquitepec':'Tlatlauquitepec',
+        'project.name.atizapan':'Atizapan',
+        'project.name.insurgentes':'Insurgentes 414',
+        'project.name.iztaccihuatl':'Iztaccihuatl 6',
+        'project.name.montevideo':'Montevideo 211',
+        'project.name.pabellon':'Pabellon Metepec'
+      }
+    };
+
+    function getSavedLang(){
+      return localStorage.getItem('lang') || (navigator.language && navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en');
+    }
+
+    function setLang(lang){
+      localStorage.setItem('lang', lang);
+      applyTranslations(lang);
+      markActiveMenu();
+      const sel = document.getElementById('langSelector');
+      if(sel) sel.value = lang;
+    }
+
+    function applyTranslations(lang){
+      const dict = translations[lang] || translations.es;
+      // Traduce menú (basado en el nombre de archivo del href)
+      const links = document.querySelectorAll('.nav__menu a, .mobile-panel a');
+      links.forEach(a =>{
+        const rawHref = (a.getAttribute('href') || '').split('/').pop() || '';
+        const key = decodeURIComponent(rawHref).toLowerCase();
+        const txt = dict.menu && (dict.menu[key] || dict.menu[key.toLowerCase()]);
+        if(txt) a.textContent = txt;
+      });
+
+      // Traduce elementos con data-i18n (texto)
+      const nodes = document.querySelectorAll('[data-i18n]');
+      nodes.forEach(n =>{
+        const k = n.getAttribute('data-i18n');
+        if(k && dict[k]) n.textContent = dict[k];
+      });
+
+      // Traduce placeholders
+      const ph = document.querySelectorAll('[data-i18n-placeholder]');
+      ph.forEach(n =>{
+        const k = n.getAttribute('data-i18n-placeholder');
+        if(k && dict[k]) n.setAttribute('placeholder', dict[k]);
+      });
+
+      // Traduce title
+      const tt = document.querySelectorAll('[data-i18n-title]');
+      tt.forEach(n =>{
+        const k = n.getAttribute('data-i18n-title');
+        if(k && dict[k]) n.setAttribute('title', dict[k]);
+      });
+
+      // Traduce alt
+      const alts = document.querySelectorAll('[data-i18n-alt]');
+      alts.forEach(n =>{
+        const k = n.getAttribute('data-i18n-alt');
+        if(k && dict[k]) n.setAttribute('alt', dict[k]);
+      });
+    }
+
+    // Crear selector de idioma si no existe y añadir listener
+    function ensureLangSelector(){
+      let sel = document.getElementById('langSelector');
+      if(!sel){
+        const actions = document.querySelector('.nav__actions') || document.querySelector('header');
+        if(actions){
+          sel = document.createElement('select');
+          sel.id = 'langSelector';
+          sel.setAttribute('aria-label','Seleccionar idioma');
+          sel.style.cssText = 'margin-right:10px;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit';
+          const op1 = document.createElement('option'); op1.value='es'; op1.textContent='ES';
+          const op2 = document.createElement('option'); op2.value='en'; op2.textContent='EN';
+          sel.appendChild(op1); sel.appendChild(op2);
+          actions.insertBefore(sel, actions.firstChild);
+        }
+      }
+      if(sel){
+        sel.removeEventListener && sel.removeEventListener('change', () => {});
+        sel.addEventListener('change', (e)=> setLang(e.target.value));
+        const initial = getSavedLang();
+        sel.value = initial;
+      }
+    }
+
+    // Ejecutar al cargar (script se carga con defer en el HTML)
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', ()=>{
+        ensureLangSelector();
+        const lang = getSavedLang();
+        applyTranslations(lang);
+        markActiveMenu();
+      });
+    } else {
+      ensureLangSelector();
+      const lang = getSavedLang();
+      applyTranslations(lang);
+      markActiveMenu();
     }
 
     // Cerrar panel móvil al hacer clic en un enlace del panel
