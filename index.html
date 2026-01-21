@@ -13,22 +13,22 @@
 
   <!-- Estilos mínimos del footer (puedes moverlos a styles.css) -->
   <style>
-    .site-footer{background:#0f1720;color:#dbe7ef;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.04);font-size:14px}
+    .site-footer{background:#7a7d80;color:#ffffff;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.04);font-size:14px}
     .site-footer .container{max-width:1200px;margin:0 auto;display:flex;gap:28px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
     .footer-col{min-width:200px;flex:1 1 240px}
     .footer-brand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
     .footer-brand img{height:36px;width:auto;display:block}
     .brand-name{font-family:"Montserrat",sans-serif;font-weight:700;color:#fff;font-size:16px}
-    .brand-sub{color:rgba(219,231,239,0.85);font-size:13px}
-    .footer-desc{color:rgba(219,231,239,0.9);line-height:1.5;font-size:13px;max-width:320px}
+    .brand-sub{color:rgba(255, 255, 255, 0.85);font-size:13px}
+    .footer-desc{color:rgba(255, 255, 255, 0.9);line-height:1.5;font-size:13px;max-width:320px}
     .footer-links{list-style:none;padding:0;margin:0}
     .footer-links li{margin:8px 0}
-    .footer-links a{color:rgba(219,231,239,0.9);text-decoration:none}
+    .footer-links a{color:rgba(255, 255, 255, 0.9);text-decoration:none}
     .footer-links a:hover{text-decoration:underline}
-    .footer-contact p{margin:6px 0;color:rgba(219,231,239,0.95)}
+    .footer-contact p{margin:6px 0;color:rgba(255, 255, 255, 0.95)}
     .footer-social{display:flex;gap:10px;margin-top:8px}
     .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.04);color:#fff;text-decoration:none;font-size:16px}
-    .site-footer .bottom{margin-top:20px;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px;color:rgba(219,231,239,0.75);font-size:13px;text-align:center}
+    .site-footer .bottom{margin-top:20px;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px;color:rgb(255, 255, 255);font-size:13px;text-align:center}
 
     @media (max-width:720px){
       .site-footer .container{gap:18px}
@@ -50,7 +50,7 @@
           La imagen usa un src de ejemplo; en caso de error se oculta.
           Reemplaza la URL por la de tu logo local si la tienes.
         -->
-        <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765906095/Captura_de_pantalla_2025-12-16_112608_nvhbxm.png" alt="logo" onerror="this.style.display='none'">
+        <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768259150/MEZCLALOGO-Model_hwa4lv.png" alt="logo" onerror="this.style.display='none'">
         <span>Grupo Mexcla & Asociados</span>
       </a>
     </div>
@@ -69,6 +69,12 @@
     </nav>
 
     <div class="nav__actions">
+      <!-- Selector de idioma -->
+      <select id="langSelector" class="lang-select" aria-label="Seleccionar idioma">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+
       <!-- Botón para abrir el menú móvil -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,14 +106,24 @@
   <!-- Carrusel: contenedor de slides (fondo) -->
   <div class="carousel" id="heroCarousel" aria-roledescription="carrusel">
     <div class="slide active" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 1">
-      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765848744/istockphoto-1064279806-612x612_qazsnn.jpg" alt="Vista aérea de la ciudad" />
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768258438/DJI_0359_wuyaw3.png" alt="Vista aérea de la ciudad" />
     </div>
     <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 2">
-      <img src="imagenes/slide2.jpg" alt="Edificios modernos" />
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768258562/2313D0128EF0F64099A1A2E4B39146B0_awhuyk.jpg" alt="Edificios modernos" />
     </div>
     <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 3">
-      <img src="imagenes/slide3.jpg" alt="Panorámica urbana" />
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768266571/17dc1b35-b348-46fd-9c63-7483a8db3911_ecvsnt.jpg" alt="Panorámica urbana" />
     </div>
+    <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 4">
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768266663/74de7516-babb-4308-a430-9168a2b4ae3d_d3zug2.jpg" alt="Panorámica urbana" />
+    </div>
+    <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 5">
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768267685/9004f6ed-275a-4931-84b0-49c188a1bbef_et6zn5.jpg" alt="Panorámica urbana" />
+    </div>
+    <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 6">
+      <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768267895/c11995dd-c921-408f-83f8-6c03789aa304_oqz4sr.jpg" alt="Panorámica urbana" />
+    </div>
+    
 
     <!-- Overlay oscuro para contraste -->
     <div class="carousel-overlay" aria-hidden="true"></div>
@@ -121,6 +137,9 @@
       <button class="indicator active" aria-label="Ir a la diapositiva 1" data-slide="0" role="tab" aria-selected="true"></button>
       <button class="indicator" aria-label="Ir a la diapositiva 2" data-slide="1" role="tab" aria-selected="false"></button>
       <button class="indicator" aria-label="Ir a la diapositiva 3" data-slide="2" role="tab" aria-selected="false"></button>
+      <button class="indicator" aria-label="Ir a la diapositiva 4" data-slide="3" role="tab" aria-selected="false"></button>
+      <button class="indicator" aria-label="Ir a la diapositiva 5" data-slide="4" role="tab" aria-selected="false"></button>
+      <button class="indicator" aria-label="Ir a la diapositiva 6" data-slide="5" role="tab" aria-selected="false"></button>
     </div>
   </div>
 
@@ -138,7 +157,7 @@
     .carousel{position:absolute;inset:0;z-index:0;overflow:hidden;display:block}
     .slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .8s ease, transform .8s ease;transform:scale(1.02);background-color:#111}
     .slide.active{opacity:1;transform:scale(1)}
-    .slide img{width:100%;height:100%;object-fit:cover;display:block}
+    .slide img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
     
     .bottom-note{position:absolute;left:50%;transform:translateX(-50%);bottom:28px;font-size:13px;color:rgba(255,255,255,0.9);z-index:11}
 
@@ -147,9 +166,10 @@
     .carousel-control.prev{left:18px}
     .carousel-control.next{right:18px}
 
-    .carousel-indicators{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:8px;z-index:13}
-    .indicator{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.4);border:0;cursor:pointer}
-    .indicator.active{background:var(--accent, #f0b43a)}
+    .carousel-indicators{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:10px;z-index:22;pointer-events:auto}
+    .indicator{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.9);border:2px solid rgba(0,0,0,0.12);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.18);transition:transform .15s, background .15s, border-color .15s}
+    .indicator:hover{transform:scale(1.18)}
+    .indicator.active{background:var(--accent, #f0b43a);border-color:rgba(0,0,0,0.18);transform:scale(1.2)}
 
     @media (max-width:520px){
       .hero__content h1{font-size:28px}
@@ -228,41 +248,39 @@
       <!-- Columna 1: marca y descripción -->
       <div class="footer-col">
         <div class="footer-brand">
-          <!-- Reemplaza el src por tu logo local si lo deseas -->
-          <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765906095/Captura_de_pantalla_2025-12-16_112608_nvhbxm.png" alt="Logo Grupo Mexcla" onerror="this.style.display='none'">
           <div>
             <div class="brand-name">Grupo Mexcla</div>
             <div class="brand-sub">Innovación en arquitectura, ingeniería y telecomunicaciones</div>
           </div>
         </div>
-        <div class="footer-desc">Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.</div>
+        <div class="footer-desc" data-i18n="footer.description">Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.</div>
       </div>
 
       <!-- Columna 2: enlaces rápidos -->
       <div class="footer-col" aria-label="Enlaces rápidos">
-        <h4 style="color:#fff;margin:0 0 10px;font-size:15px">Enlaces</h4>
+        <h4 data-i18n="footer.linksTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Enlaces</h4>
         <ul class="footer-links" role="list">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">¿Quiénes somos?</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Proyectos</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#" data-i18n="footer.link.home">Inicio</a></li>
+          <li><a href="#" data-i18n="footer.link.about">¿Quiénes somos?</a></li>
+          <li><a href="#" data-i18n="footer.link.services">Servicios</a></li>
+          <li><a href="#" data-i18n="footer.link.projects">Proyectos</a></li>
+          <li><a href="#" data-i18n="footer.link.contact">Contacto</a></li>
         </ul>
       </div>
 
       <!-- Columna 3: contacto y redes -->
       <div class="footer-col footer-contact" aria-label="Contacto">
-        <h4 style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
-        <p>Email: <a href="dirección@grupomexcla.com" style="color:rgba(219,231,239,0.95)">dirección@grupomexcla.com</a></p>
-        <p>Oficina: <a href="tel:+52 55 9345 2178" style="color:rgba(219,231,239,0.95)">+52 55 9345 2178</a></p>
-        <p>Tel: <a href="tel:+52 55 4030 2440" style="color:rgba(219,231,239,0.95)">+52 55 4030 2440</a></p>
-        <p>  <a href="tel:++52 55 3403 2997" style="color:rgba(219,231,239,0.95)">+52 55 3403 2997</a></p>
-        <p>  <a href="tel:+52 55 1233 3467" style="color:rgba(219,231,239,0.95)"> +52 55 1233 3467</a></p>
+        <h4 data-i18n="footer.contactTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
+        <p><span class="fc-label">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
+        <p><span class="fc-label">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
         <div class="footer-social" aria-hidden="false">
           <!-- Botones sociales simples (reemplaza enlaces) -->
-          <a class="social-btn" href="#" aria-label="Facebook">f</a>
-          <a class="social-btn" href="#" aria-label="Twitter">t</a>
-          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+<path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+</svg></a>
         </div>
       </div>
     </div>
