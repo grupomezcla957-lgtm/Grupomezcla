@@ -13,22 +13,22 @@
 
   <!-- Estilos mínimos del footer (puedes moverlos a styles.css) -->
   <style>
-    .site-footer{background:#0f1720;color:#dbe7ef;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.04);font-size:14px}
+    .site-footer{background:#7a7d80;color:#dbe7ef;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.04);font-size:14px}
     .site-footer .container{max-width:1200px;margin:0 auto;display:flex;gap:28px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
     .footer-col{min-width:200px;flex:1 1 240px}
     .footer-brand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
     .footer-brand img{height:36px;width:auto;display:block}
     .brand-name{font-family:"Montserrat",sans-serif;font-weight:700;color:#fff;font-size:16px}
-    .brand-sub{color:rgba(219,231,239,0.85);font-size:13px}
-    .footer-desc{color:rgba(219,231,239,0.9);line-height:1.5;font-size:13px;max-width:320px}
+    .brand-sub{color:rgba(255, 255, 255, 0.85);font-size:13px}
+    .footer-desc{color:rgba(255, 255, 255, 0.9);line-height:1.5;font-size:13px;max-width:320px}
     .footer-links{list-style:none;padding:0;margin:0}
     .footer-links li{margin:8px 0}
-    .footer-links a{color:rgba(219,231,239,0.9);text-decoration:none}
+    .footer-links a{color:rgba(255, 255, 255, 0.9);text-decoration:none}
     .footer-links a:hover{text-decoration:underline}
-    .footer-contact p{margin:6px 0;color:rgba(219,231,239,0.95)}
+    .footer-contact p{margin:6px 0;color:rgba(255, 255, 255, 0.95)}
     .footer-social{display:flex;gap:10px;margin-top:8px}
     .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.04);color:#fff;text-decoration:none;font-size:16px}
-    .site-footer .bottom{margin-top:20px;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px;color:rgba(219,231,239,0.75);font-size:13px;text-align:center}
+    .site-footer .bottom{margin-top:20px;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px;color:rgba(255, 255, 255, 0.75);font-size:13px;text-align:center}
 
     @media (max-width:720px){
       .site-footer .container{gap:18px}
@@ -50,8 +50,8 @@
           La imagen usa un src de ejemplo; en caso de error se oculta.
           Reemplaza la URL por la de tu logo local si la tienes.
         -->
-        <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765906095/Captura_de_pantalla_2025-12-16_112608_nvhbxm.png" alt="logo" onerror="this.style.display='none'">
-        <span>Grupo Mexcla & Asociados</span>
+        <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1768259150/MEZCLALOGO-Model_hwa4lv.png" alt="logo" onerror="this.style.display='none'">
+        <span data-i18n="brand.name">Grupo Mexcla & Asociados</span>
       </a>
     </div>
 
@@ -69,6 +69,12 @@
     </nav>
 
     <div class="nav__actions">
+      <!-- Selector de idioma -->
+      <select id="langSelector" class="lang-select" aria-label="Seleccionar idioma">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+
       <!-- Botón para abrir el menú móvil -->
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,70 +105,73 @@
   
   <!-- Imagen añadida -->
   <figure style="max-width:1000px;margin:18px auto;padding:0 20px;text-align:center">
-    <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765914071/Captura_de_pantalla_2025-12-16_134040_lyldlg.png" alt="Servicio destacado" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08)">
+    <img data-i18n-alt="services.featuredAlt" src="https://res.cloudinary.com/dotui9gho/image/upload/v1768277250/WhatsApp_Image_2018-07-24_at_5.30.06_PM_hlzwx6.jpg" alt="Servicio destacado" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08)">
   </figure>
 
   <!-- Sección: Nuestros servicios (añadida desde la imagen) -->
   <section class="services" style="max-width:1100px;margin:18px auto;padding:18px 20px;text-align:center">
-    <h1 class="page-title" style="font-family:Montserrat, sans-serif; font-size:32px; margin-bottom:12px; color:#0f1720;">Nuestros servicios</h1>
-    <p style="color:#333;max-width:900px;margin:0 auto 22px;">Somos una empresa 100% mexicana dedicada a la construcción de obra civil, arquitectura, ingeniería y telecomunicaciones.</p>
+    <h1 class="page-title" data-i18n="page.servicesTitle" style="font-family:Montserrat, sans-serif; font-size:32px; margin-bottom:12px; color:#0f1720;">Nuestros servicios</h1>
+    <p data-i18n="services.intro" style="color:#333;max-width:900px;margin:0 auto 22px;">Somos una empresa 100% mexicana dedicada a la construcción de obra civil, arquitectura, ingeniería y telecomunicaciones.</p>
 
     <div class="services-grid" style="display:flex;gap:28px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;margin-top:18px;text-align:left">
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 style="color:#0f1720;font-weight:700;margin-bottom:12px">Arquitectura</h3>
+          <h3 data-i18n="services.architecture" style="color:#0f1720;font-weight:700;margin-bottom:12px">Arquitectura</h3>
+          <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
+            <li data-i18n="services.arch.item1">Proyecto conceptual</li>
+            <li data-i18n="services.arch.item2">Anteproyecto</li>
+            <li data-i18n="services.arch.item3">Proyecto ejecutivo</li>
+            <li data-i18n="services.arch.item4">Diseño de interiores</li>
+          </ul>
+        </div>
+
+      <div class="service-col" style="flex:1 1 22%;min-width:200px">
+        <h3 data-i18n="services.civil" style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingeniería civil</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li>Proyecto conceptual</li>
-          <li>Anteproyecto</li>
-          <li>Proyecto ejecutivo</li>
-          <li>Diseño de interiores</li>
+          <li data-i18n="services.civil.item1">Cálculo estructural</li>
+          <li data-i18n="services.civil.item2">Memorias de cálculo</li>
+          <li data-i18n="services.civil.item3">Proyecto estructural</li>
+          <li data-i18n="services.civil.item4">Ingenierías MEP</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingeniería civil</h3>
+        <h3 data-i18n="services.visualization" style="color:#0f1720;font-weight:700;margin-bottom:12px">Visualización digital</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li>Cálculo estructural</li>
-          <li>Memorias de cálculo</li>
-          <li>Proyecto estructural</li>
-          <li>Ingenierías MEP</li>
+          <li data-i18n="services.vis.item1">Renders</li>
+          <li data-i18n="services.vis.item2">Recorridos virtuales</li>
+          <li data-i18n="services.vis.item3">Fotogrametría con drone</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 style="color:#0f1720;font-weight:700;margin-bottom:12px">Visualización digital</h3>
+        <h3 data-i18n="services.telecom" style="color:#0f1720;font-weight:700;margin-bottom:12px">Telecomunicaciones</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li>Renders</li>
-          <li>Recorridos virtuales</li>
-          <li>Fotogrametría con drone</li>
+          <li data-i18n="services.telecom.item1">Diseño de redes de fibra óptica</li>
+          <li data-i18n="services.telecom.item2">Cableado estructurado</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 style="color:#0f1720;font-weight:700;margin-bottom:12px">Telecomunicaciones</h3>
-        <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li>Diseño de redes de fibra óptica</li>
-          <li>Cableado estructurado</li>
-        </ul>
-      </div>
-
-      <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingenierias de valor 
-</h3>
-        <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <h3>Desarrollo de proyectos con metodologías:</h3>
-          <li>PMI</li>
-          <li>SCRUM</li>
-          <li>LEAN</li>
-          <h3>Desarrollo de proyectos con:</h3>
-          <li>Revit + BIM</li>
-        </ul>
+        <h3 data-i18n="services.valueEngineering" style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingenierias de valor</h3>
+        <div style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
+          <h4 data-i18n="services.methodsTitle">Desarrollo de proyectos con metodologías:</h4>
+          <ul style="margin:8px 0 12px;padding-left:20px">
+            <li data-i18n="services.methods.pmi">PMI</li>
+            <li data-i18n="services.methods.scrum">SCRUM</li>
+            <li data-i18n="services.methods.lean">LEAN</li>
+          </ul>
+          <h4 data-i18n="services.toolsTitle">Desarrollo de proyectos con:</h4>
+          <ul style="margin:8px 0;padding-left:20px">
+            <li data-i18n="services.tools.revit">Revit + BIM</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
  <!-- Imagen añadida -->
   <figure style="max-width:1000px;margin:18px auto;padding:0 20px;text-align:center">
-    <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765916871/Captura_de_pantalla_2025-12-16_142319_c7ij0b.png" alt="Servicio destacado" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08)">
+    <img data-i18n-alt="services.featuredAlt" src="https://res.cloudinary.com/dotui9gho/image/upload/v1768278849/IMG_1103_adndtl.jpg" alt="Servicio destacado" style="width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08)">
   </figure>
   </main>
 
@@ -174,41 +183,39 @@
       <!-- Columna 1: marca y descripción -->
       <div class="footer-col">
         <div class="footer-brand">
-          <!-- Reemplaza el src por tu logo local si lo deseas -->
-          <img src="https://res.cloudinary.com/dotui9gho/image/upload/v1765906095/Captura_de_pantalla_2025-12-16_112608_nvhbxm.png" alt="Logo Grupo Mexcla" onerror="this.style.display='none'">
           <div>
-            <div class="brand-name">Grupo Mexcla</div>
-            <div class="brand-sub">Innovación en arquitectura, ingeniería y telecomunicaciones</div>
+            <div class="brand-name" data-i18n="brand.name">Grupo Mexcla</div>
+            <div class="brand-sub" data-i18n="brand.sub">Innovación en arquitectura, ingeniería y telecomunicaciones</div>
           </div>
         </div>
-        <div class="footer-desc">Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.</div>
+        <div class="footer-desc" data-i18n="footer.description">Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.</div>
       </div>
 
       <!-- Columna 2: enlaces rápidos -->
       <div class="footer-col" aria-label="Enlaces rápidos">
-        <h4 style="color:#fff;margin:0 0 10px;font-size:15px">Enlaces</h4>
+        <h4 data-i18n="footer.linksTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Enlaces</h4>
         <ul class="footer-links" role="list">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">¿Quiénes somos?</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Proyectos</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#" data-i18n="footer.link.home">Inicio</a></li>
+          <li><a href="#" data-i18n="footer.link.about">¿Quiénes somos?</a></li>
+          <li><a href="#" data-i18n="footer.link.services">Servicios</a></li>
+          <li><a href="#" data-i18n="footer.link.projects">Proyectos</a></li>
+          <li><a href="#" data-i18n="footer.link.contact">Contacto</a></li>
         </ul>
       </div>
 
       <!-- Columna 3: contacto y redes -->
       <div class="footer-col footer-contact" aria-label="Contacto">
-        <h4 style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
-        <p>Email: <a href="dirección@grupomexcla.com" style="color:rgba(219,231,239,0.95)">dirección@grupomexcla.com</a></p>
-        <p>Oficina: <a href="tel:+52 55 9345 2178" style="color:rgba(219,231,239,0.95)">+52 55 9345 2178</a></p>
-        <p>Tel: <a href="tel:+52 55 4030 2440" style="color:rgba(219,231,239,0.95)">+52 55 4030 2440</a></p>
-        <p>  <a href="tel:++52 55 3403 2997" style="color:rgba(219,231,239,0.95)">+52 55 3403 2997</a></p>
-        <p>  <a href="tel:+52 55 1233 3467" style="color:rgba(219,231,239,0.95)"> +52 55 1233 3467</a></p>
+        <h4 data-i18n="footer.contactTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
+        <p><span class="fc-label">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
+        <p><span class="fc-label">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
+        <p><span class="fc-label">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
         <div class="footer-social" aria-hidden="false">
           <!-- Botones sociales simples (reemplaza enlaces) -->
-          <a class="social-btn" href="#" aria-label="Facebook">f</a>
-          <a class="social-btn" href="#" aria-label="Twitter">t</a>
-          <a class="social-btn" href="#" aria-label="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+<path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+</svg></a>
         </div>
       </div>
     </div>
