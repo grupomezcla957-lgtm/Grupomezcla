@@ -25,8 +25,8 @@
     .footer-links li{margin:8px 0}
     .footer-links a{color:rgba(255, 255, 255, 0.9);text-decoration:none}
     .footer-links a:hover{text-decoration:underline}
-    .footer-contact p{margin:6px 0;color:rgba(255, 255, 255, 0.95)}
-    .fc-label{color:#ffffff}
+    .footer-contact p{margin:6px 0;color:#ffffff;display:flex;align-items:center;gap:8px}
+    .fc-label{color:#ffffff;display:inline-block;min-width:70px}
     .fc-link{color:#ffffff}
     .footer-social{display:flex;gap:10px;margin-top:8px}
     .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.04);color:#fff;text-decoration:none;font-size:16px}
@@ -119,42 +119,51 @@
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
           <h3 data-i18n="services.architecture" style="color:#0f1720;font-weight:700;margin-bottom:12px">Arquitectura</h3>
           <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-            <li data-i18n="services.arch.item1">Proyecto conceptual</li>
-            <li data-i18n="services.arch.item2">Anteproyecto</li>
-            <li data-i18n="services.arch.item3">Proyecto ejecutivo</li>
-            <li data-i18n="services.arch.item4">Diseño de interiores</li>
+          <li data-i18n="services.arch.item1">Proyecto conceptual.</li>
+            <li data-i18n="services.arch.item2">Anteproyecto.</li>
+            <li data-i18n="services.arch.item3">Proyecto ejecutivo.</li>
+            <li data-i18n="services.arch.item4">Diseño de interiores.</li>
           </ul>
         </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
         <h3 data-i18n="services.civil" style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingeniería civil</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li data-i18n="services.civil.item1">Cálculo estructural</li>
-          <li data-i18n="services.civil.item2">Memorias de cálculo</li>
-          <li data-i18n="services.civil.item3">Proyecto estructural</li>
-          <li data-i18n="services.civil.item4">Ingenierías MEP</li>
+          <li data-i18n="services.civil.item1">Cálculo estructural.</li>
+          <li data-i18n="services.civil.item2">Memorias de cálculo.</li>
+          <li data-i18n="services.civil.item3">Proyecto estructural.</li>
+          <li data-i18n="services.civil.item4">Ingenierías MEP.</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
         <h3 data-i18n="services.visualization" style="color:#0f1720;font-weight:700;margin-bottom:12px">Visualización digital</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li data-i18n="services.vis.item1">Renders</li>
-          <li data-i18n="services.vis.item2">Recorridos virtuales</li>
-          <li data-i18n="services.vis.item3">Fotogrametría con drone</li>
+          <li data-i18n="services.vis.item1">Renders.</li>
+          <li data-i18n="services.vis.item2">Recorridos virtuales.</li>
+          <li data-i18n="services.vis.item3">Fotogrametría con drone.</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
         <h3 data-i18n="services.telecom" style="color:#0f1720;font-weight:700;margin-bottom:12px">Telecomunicaciones</h3>
         <ul style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
-          <li data-i18n="services.telecom.item1">Diseño de redes de fibra óptica</li>
-          <li data-i18n="services.telecom.item2">Cableado estructurado</li>
+          <li data-i18n="services.telecom.item1">Diseño de redes de fibra óptica.</li>
+          <li data-i18n="services.telecom.item2">Cableado estructurado.</li>
+          <li style="margin-top:12px"><strong data-i18n="services.methodsTitle">Administración de proyectos</strong>
+            <ul style="list-style:circle;padding-left:18px;margin-top:6px">
+              <li data-i18n="services.telecom.item4">Servicios de administración de proyectos utilizando las metodologías tradicionales como PMP, también la utilización de marcos de trabajo Ágiles.</li>
+              <li data-i18n="services.telecom.item5">Servicios de consultoría para administración de Proyectos.</li>
+            </ul>
+          </li>
+          <li data-i18n="services.telecom.item6">Supervisión de Planta Externa / Planta Interna (OSP/ISP).</li>
+          <li data-i18n="services.telecom.item7">Servicios de Diseño tecnologías HFC, GPON, FTTH.</li>
+          <li data-i18n="services.telecom.item8">Servicios profesionales de TI.</li>
         </ul>
       </div>
 
       <div class="service-col" style="flex:1 1 22%;min-width:200px">
-        <h3 data-i18n="services.valueEngineering" style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingenierias de valor</h3>
+        <h3 data-i18n="services.valueEngineering" style="color:#0f1720;font-weight:700;margin-bottom:12px">Ingenierías de valor</h3>
         <div style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
           <h4 data-i18n="services.methodsTitle">Desarrollo de proyectos con metodologías:</h4>
           <ul style="margin:8px 0 12px;padding-left:20px">
@@ -168,7 +177,20 @@
           </ul>
         </div>
       </div>
-    </div>
+
+      <div class="service-col" style="flex:1 1 22%;min-width:200px">
+        <h3 data-i18n="services.ispTitle" style="color:#0f1720;font-weight:700;margin-bottom:12px">Empresas ISP PYMES, Grupo Mexcla te ofrece:</h3>
+        <div style="list-style:square;padding-left:18px;color:#222;line-height:1.7">
+         
+          <ul style="margin:8px 0 12px;padding-left:20px">
+            <li data-i18n="services.methods.1">Acompañamiento en la profesionalización de tu equipo.</li>
+            <li data-i18n="services.methods.2">Competitividad frente a tus pares y los grandes.</li>
+            <li data-i18n="services.methods.3">Escalabilidad y calidad de Red.</li>
+            <li data-i18n="services.methods.4">Entrenamiento Basado en Procesos.</li>
+            <li data-i18n="services.methods.5">Cumplimiento regulatorio.</li>
+          </ul>
+        </div>
+      </div>
   </section>
 
  <!-- Imagen añadida -->
@@ -210,11 +232,11 @@
       <!-- Columna 3: contacto y redes -->
       <div class="footer-col footer-contact" aria-label="Contacto">
         <h4 data-i18n="footer.contactTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
-        <p><span class="fc-label">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
-        <p><span class="fc-label">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.email">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.office">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
         <div class="footer-social" aria-hidden="false">
           <!-- Botones sociales simples (reemplaza enlaces) -->
           <a class="social-btn" href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
