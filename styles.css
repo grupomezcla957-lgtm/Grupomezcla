@@ -48,7 +48,18 @@
       color:inherit;
       font-weight:700;
     }
-    .logo img{height:36px}
+    
+    .logo img{
+      height:60px;
+      background: linear-gradient(135deg, #ffffffaf 0%, #ffffffb6 100%);
+      padding:10px 11px;
+      border-radius:10px;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      
+    }
+    
+    
     .logo span{font-family:"Myriad Pro",sans-serif;letter-spacing:0.6px}
 
     /* Menú principal - se oculta en móvil mediante media queries */
