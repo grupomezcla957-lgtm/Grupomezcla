@@ -24,8 +24,8 @@
     .footer-links li{margin:8px 0}
     .footer-links a{color:rgba(255, 255, 255, 0.9);text-decoration:none}
     .footer-links a:hover{text-decoration:underline}
-    .footer-contact p{margin:6px 0;color:rgba(255, 255, 255, 0.95)}
-    .fc-label{color:#ffffff}
+    .footer-contact p{margin:6px 0;color:#ffffff;display:flex;align-items:center;gap:8px}
+    .fc-label{color:#ffffff;display:inline-block;min-width:70px}
     .fc-link{color:#ffffff}
     .footer-social{display:flex;gap:10px;margin-top:8px}
     .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.04);color:#fff;text-decoration:none;font-size:16px}
@@ -157,8 +157,8 @@ para el diseño de soluciones, También consultoría en Administración de Proye
       <div class="footer-col">
         <div class="footer-brand">
           <div>
-            <div class="brand-name">Grupo Mexcla</div>
-            <div class="brand-sub">Innovación en arquitectura, ingeniería y telecomunicaciones</div>
+            <div class="brand-name" data-i18n="brand.name">Grupo Mexcla</div>
+            <div class="brand-sub" data-i18n="brand.sub">Innovación en arquitectura, ingeniería y telecomunicaciones</div>
           </div>
         </div>
         <div class="footer-desc" data-i18n="footer.description">Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.</div>
@@ -181,11 +181,11 @@ para el diseño de soluciones, También consultoría en Administración de Proye
       <!-- Columna 3: contacto y redes -->
       <div class="footer-col footer-contact" aria-label="Contacto">
         <h4 data-i18n="footer.contactTitle" style="color:#fff;margin:0 0 10px;font-size:15px">Contacto</h4>
-        <p><span class="fc-label">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
-        <p><span class="fc-label">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
-        <p><span class="fc-label">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.email">Email:</span> <a href="mailto:dirección@grupomexcla.com" class="fc-link">dirección@grupomexcla.com</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.office">Oficina:</span> <a href="tel:+525593452178" class="fc-link">+52 55 9345 2178</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525540302440" class="fc-link">+52 55 4030 2440</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525534032997" class="fc-link">+52 55 3403 2997</a></p>
+        <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525512333467" class="fc-link">+52 55 1233 3467</a></p>
         <div class="footer-social" aria-hidden="false">
           <!-- Botones sociales simples (reemplaza enlaces) -->
           <a class="social-btn" href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
