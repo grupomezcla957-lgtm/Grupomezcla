@@ -16,9 +16,25 @@
       font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
       color:#111; /* texto oscuro por defecto */
       background:transparent; /* quitar fondo negro */
+      /* el ancho 100% junto al meta viewport aseguran diseño fluido */
+      width:100%;
     }
     /* evitar que el contenido quede oculto por la nav fija */
     body{padding-top:var(--nav-height)}
+
+    /* contenedor reutilizable para centrar con margen y padding */
+    .container{
+      width:100%;
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    /* tablas adaptables: desbordarán horizontalmente en móviles */
+    table{width:100%;border-collapse:collapse}
+    @media (max-width:640px){
+      table{display:block;overflow-x:auto}
+    }
 
     /* ============================
        NAV - barra superior fija
