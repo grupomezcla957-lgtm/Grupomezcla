@@ -237,8 +237,8 @@
 /* Variables de color para footer/nav */
 :root{
   --footer-bg:#0f1720; /* fondo oscuro del footer */
-  --footer-text:#dbe7ef; /* texto claro del footer */
-  --footer-sub:rgba(219,231,239,0.85); /* texto secundario */
+  --footer-text:#000000; /* texto claro del footer */
+  --footer-sub:rgba(0, 0, 0, 0.85); /* texto secundario */
 }
 
 .site-footer{
