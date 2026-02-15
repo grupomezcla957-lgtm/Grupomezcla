@@ -65,7 +65,8 @@
           'proyectos.html':'Proyectos | Construcción',
           'telecomunicaciones.html':'Telecomunicaciones',
           'contacto.html':'Contacto',
-          'contacto':'Contacto'
+          'contacto':'Contacto',
+          'Contacto':'Contacto'
         },
           'page.aboutTitle':'¿Quiénes somos?',
           'page.mission':'Misión',
@@ -88,6 +89,7 @@
           'footer.link.engineering':'Ingenierías',
           'footer.link.projects ':'Proyectos | Construcción',
           'footer.link.telecom':'Telecomunicaciones',
+          'footer.link.videos':'Videos',
           'footer.link.contact':'Contacto',
           'footer.contactTitle':'Contacto',
           'footer.description':'Somos un equipo con 10 años de experiencia desarrollando proyectos integrales que conectan a México. Ofrecemos soluciones en diseño, ingeniería y construcción.',
@@ -104,7 +106,8 @@
           'eng.card1':'Cableado estructurado',
           'eng.card2':'Cálculo estructural',
           'eng.card3':'Media tensión',
-          'eng.card4':'Fibra óptica',
+          'eng.card4':'CCTV Y Red',
+          'eng.card5':'Fibra óptica',
           'page.servicesTitle':'Nuestros servicios',
           'services.intro':'Somos una empresa 100% mexicana dedicada a la construcción de obra civil, arquitectura, ingeniería y telecomunicaciones.',
           'services.architecture':'Arquitectura',
@@ -156,6 +159,7 @@
           'telecom.project1.year':'2021 hasta la fecha',
           'telecom.project2.name':'AT&T',
           'telecom.project3.name':'Administración de proyectos',
+          'telecom.project4.name':'Supervisión de proyectos',
           'project.subtitle.cabling':'Cableado estructurado',
             'project.subtitle.fiber':'Instalación de fibra',
               'project.name.stcmetro':'STC METRO',
@@ -168,12 +172,24 @@
               'project.name.iztaccihuatl':'Iztaccihuatl 6',
               'project.name.montevideo':'Montevideo 211',
               'project.name.pabellon':'Pabellon Metepec',
+              'project.name.reforma':'Reforma 355',
               'project.name.salinas':'Oficinas de Crédito y Cobranza Grupo Salinas',
               'project.name.villas':'Remodelación Villas Xaltipa',
               'project.name.zaragoza':'Remodelación Ignacio Zaragoza',
               'footer.contact.email':'Email:',
               'footer.contact.office':'Oficina:',
-              'footer.contact.tel':'Tel:'
+              'footer.contact.tel':'Tel:',
+              'page.videosTitle':'Videos',
+              'video.title1':'Título del Video 1',
+              'video.desc1':'Descripción del video 1',
+              'video.title2':'Título del Video 2',
+              'video.desc2':'Descripción del video 2',
+              'video.title3':'Título del Video 3',
+              'video.desc3':'Descripción del video 3',
+              'video.title4':'Título del Video 4',
+              'video.desc4':'Descripción del video 4',
+              'footer.copyright':'Todos los derechos reservados'
+
       },
       en: {
         menu: {
@@ -184,7 +200,8 @@
           'proyectos.html':'Projects | Construction',
           'telecomunicaciones.html':'Telecommunications',
           'contacto.html':'Contact',
-          'contacto':'Contact'
+          'contacto':'Contact',
+          'Contacto':'Contact'
         },
         'page.aboutTitle':'About us',
         'page.mission':'Mission',
@@ -207,6 +224,7 @@
         'footer.link.engineering':'Engineering',
         'footer.link.projects':'Projects | Construction',
         'footer.link.telecom':'Telecommunications',
+        'footer.link.videos':'Videos',
         'footer.link.contact':'Contact',
         'footer.contactTitle':'Contact',
         'footer.description':'We are a team with 10 years of experience delivering integrated projects across Mexico. We provide design, engineering and construction solutions.',
@@ -223,7 +241,8 @@
         'eng.card1':'Structured Cabling',
         'eng.card2':'Structural Calculation',
         'eng.card3':'Medium Voltage',
-        'eng.card4':'Fiber Optic',
+        'eng.card4':'CCTV and Network',
+        'eng.card5':'Fiber Optic',
         'page.servicesTitle':'Our services',
         'services.intro':'We are a 100% Mexican company dedicated to civil construction, architecture, engineering and telecommunications.',
         'services.architecture':'Architecture',
@@ -275,6 +294,7 @@
         'telecom.project1.year':'2021 to present',
         'telecom.project2.name':'AT&T',
         'telecom.project3.name':'Project Management',
+        'telecom.project4.name':'Project Supervision',
         'project.subtitle.cabling':'Structured Cabling',
         'project.subtitle.fiber':'Fiber installation',
         'project.name.stcmetro':'STC METRO',
@@ -287,12 +307,23 @@
         'project.name.iztaccihuatl':'Iztaccihuatl 6',
         'project.name.montevideo':'Montevideo 211',
         'project.name.pabellon':'Pabellon Metepec',
+        'project.name.reforma':'Reforma 355',
         'project.name.salinas':'Salinas Credit and Collection Offices',
         'project.name.villas':'Villas Xaltipa Remodeling',
         'project.name.zaragoza':'Ignacio Zaragoza Remodeling',
         'footer.contact.email':'Email:',
         'footer.contact.office':'Office:',
-        'footer.contact.tel':'Phone:'
+        'footer.contact.tel':'Phone:',
+        'page.videosTitle':'Videos',
+        'video.title1':'Video Title 1',
+        'video.desc1':'Video description 1',
+        'video.title2':'Video Title 2',
+        'video.desc2':'Video description 2',
+        'video.title3':'Video Title 3',
+        'video.desc3':'Video description 3',
+        'video.title4':'Video Title 4',
+        'video.desc4':'Video description 4',
+        'footer.copyright':'All rights reserved'
       }
     };
 
