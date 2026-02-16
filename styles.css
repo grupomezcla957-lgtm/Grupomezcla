@@ -450,3 +450,51 @@
     }
   
     
+    /* ====== VALORES ====== */
+
+.values {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.values-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* PC */
+  gap: 15px;
+  max-width: 1100px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.value-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #0f1720;
+  letter-spacing: 1px;
+}
+
+/* ====== TABLET ====== */
+@media (max-width: 1024px) {
+  .values-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== MÓVIL ====== */
+@media (max-width: 720px) {
+  .values-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-label {
+    font-size: 13px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .values-row {
+    grid-template-columns: 1fr;
+  }
+}
