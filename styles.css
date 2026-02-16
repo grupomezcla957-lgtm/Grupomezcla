@@ -312,15 +312,16 @@
     .about h1, .about .page-title{margin:0 0 8px;font-size:28px;line-height:1.1;text-align:center}
     .about p{margin:0 0 12px;line-height:1.6;word-break:break-word}
 
-/* Contenedor principal */
+/* CONTENEDOR PRINCIPAL */
 .values-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: start;
   justify-items: center;
-  width: 62%;              
-  max-width: 1000px;
+  width: 100%;           /* CAMBIAR ESTO */
+  max-width: 1100px;
   margin: 0 auto;
+  gap: 10px;             /* Espacio entre columnas */
 }
 
 /* Cada bloque */
@@ -329,45 +330,33 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;              /*centrado real */
 }
 
-/* Texto debajo del icono */
+/* Texto */
 .value-label {
   margin-top: 15px;
   font-weight: 900;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  white-space: nowrap;
   text-align: center;
+  white-space: nowrap;
 }
 
-/* 📱 TABLET */
-@media (max-width: 900px) {
-  .values-row {
-    grid-template-columns: repeat(5, 1fr); /* sigue alineado */
-  }
-
-  .value-label {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-  }
-}
-
-/* 📱 MÓVIL */
 @media (max-width: 600px) {
+
   .values-row {
-    grid-template-columns: repeat(5, 1fr); /* 5 columnas igual que desktop */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;              /* Reduce espacio controlado */
+    padding: 0 8px;        /*  Evita que se pegue a los bordes */
   }
 
   .value-label {
-    font-size: 9px;   
-    letter-spacing: 1px;
+    font-size: 8px;        /*Tamaño ideal para que quepan */
+    letter-spacing: 0.5px;
   }
+
 }
-
-
     
     /* ============================
        Sección: Nuestros servicios
@@ -473,3 +462,12 @@
       .project-card{flex:1 1 100%}
       .project-thumb{height:200px}
     }
+  
+    
+    @media (max-width: 600px){
+  .about img{
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
