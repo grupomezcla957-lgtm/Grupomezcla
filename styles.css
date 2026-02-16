@@ -353,7 +353,7 @@
 /* 📱 Móvil */
 @media (max-width:480px){
   .value-label{
-    font-size:8px;
+    font-size:6px;
   }
 }
 
@@ -465,3 +465,4 @@
   
     
     
+
