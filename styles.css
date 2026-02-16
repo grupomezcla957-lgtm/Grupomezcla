@@ -353,7 +353,7 @@
 /* 📱 Móvil */
 @media (max-width:480px){
   .value-label{
-    font-size:10px;
+    font-size:8px;
   }
 }
 
