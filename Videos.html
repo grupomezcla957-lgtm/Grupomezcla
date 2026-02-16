@@ -13,6 +13,40 @@
 
   <!-- Estilos mínimos del footer (puedes moverlos a styles.css) -->
   <style>
+    /* Estilos para videos */
+   .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 70px;
+      margin-top: 100px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .videos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .site-footer{background:#ffffff;color:#ffffff;padding:36px 20px;border-top:1px solid rgba(255,255,255,0.04);font-size:14px}
     .site-footer .container{max-width:1200px;margin:0 auto;display:flex;gap:28px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
     .footer-col{min-width:200px;flex:1 1 240px}
@@ -32,21 +66,6 @@
     .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:6px;background:rgba(255,255,255,0.04);color:#000000;text-decoration:none;font-size:16px}
     .site-footer .bottom{margin-top:20px;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px;color:rgb(0, 0, 0);font-size:13px;text-align:center}
 
-    /* Estilos para videos */
-    .videos-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:40px;margin-top:40px}
-    .video-card{border-radius:10px;overflow:hidden;background:#f5f5f5;box-shadow:0 2px 10px rgba(0,0,0,0.1);transition:transform 0.3s ease, box-shadow 0.3s ease}
-    .video-card:hover{transform:translateY(-4px);box-shadow:0 4px 16px rgba(0,0,0,0.15)}
-    .video-container{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
-    .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-    .video-card h3{font-family:Montserrat, sans-serif;font-size:18px;font-weight:700;margin:12px;color:#0f1720}
-    .video-card p{font-size:13px;margin:0 12px 12px;color:#666;line-height:1.4}
-
-    @media (max-width:1024px){
-      .videos-grid{grid-template-columns:repeat(2, 1fr)}
-    }
-    @media (max-width:720px){
-      .videos-grid{grid-template-columns:1fr}
-    }
   </style>
 </head>
 <body>
@@ -113,52 +132,58 @@
 
   <main>
     <section class="hero hero--short" aria-label="Hero principal" style="padding-top:8px">
-      <section class="about" aria-label="Sobre Grupo Mexcla y Asociados" style="padding:12px 20px;max-width:1100px;margin:0">
-        <h1 class="page-title" data-i18n="page.videosTitle" style="font-family:Montserrat, sans-serif; font-size:32px; margin-bottom:12px; color:#0f1720;">Videos</h1>
-      </section>
+      <section class="about" style="padding:12px 20px;">
+    <h1 style="font-family:Montserrat, sans-serif; font-size:32px; color:#0f1720;">Videos</h1>
+  </section>
 
-      <!-- Sección: Videos de YouTube -->
-      <section class="videos-section" aria-label="Videos" style="padding:12px 20px;max-width:1100px;margin:8px auto;">
-        <div class="videos-grid">
-          <!-- Video 1 -->
-          <article class="video-card">
-            <div class="video-container">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <h3 data-i18n="video.title1">Título del Video 1</h3>
-            <p data-i18n="video.desc1">Descripción del video 1</p>
-          </article>
+  <section class="videos-grid">
 
-          <!-- Video 2 -->
-          <article class="video-card">
-            <div class="video-container">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <h3 data-i18n="video.title2">Título del Video 2</h3>
-            <p data-i18n="video.desc2">Descripción del video 2</p>
-          </article>
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="Video1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
-          <!-- Video 3 -->
-          <article class="video-card">
-            <div class="video-container">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <h3 data-i18n="video.title3">Título del Video 3</h3>
-            <p data-i18n="video.desc3">Descripción del video 3</p>
-          </article>
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="Video2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
-          <!-- Video 4 -->
-          <article class="video-card">
-            <div class="video-container">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_4" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <h3 data-i18n="video.title4">Título del Video 4</h3>
-            <p data-i18n="video.desc4">Descripción del video 4</p>
-          </article>
-        </div>
-      </section>
-    </section>
-  </main>
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="Video3.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="Video4.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="Video5.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+ <!-- ============================
+       Pie de página (footer)
+       ============================ -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <!-- Columna 1: marca y descripción -->
@@ -186,6 +211,7 @@
           <li><a href="Contacto.html" data-i18n="footer.link.contact">Contacto</a></li>
         </ul>
       </div>
+
       <!-- Columna 3: contacto y redes -->
       <div class="footer-col footer-contact" aria-label="Contacto">
         <h4 data-i18n="footer.contactTitle" style="color:#000000;margin:0 0 10px;font-size:15px">Contacto</h4>
@@ -196,7 +222,7 @@
         <p><span class="fc-label" data-i18n="footer.contact.tel">Tel:</span> <a href="tel:+525512333764" class="fc-link">+52 55 1233 3764</a></p>
         <div class="footer-social" aria-hidden="false">
           <!-- Botones sociales simples (reemplaza enlaces) -->
-          <a class="social-btn" href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+          <a class="social-btn" href="" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
 <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
 </svg></a>
           <a class="social-btn" href="https://www.linkedin.com/company/grupo-mexcla-y-asociados/" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -209,7 +235,7 @@
 
     <!-- Línea de derechos -->
     <div class="bottom" role="note">
-      &copy; <span id=\"currentYear\"></span> Grupo Mexcla y Asociados. <span data-i18n=\"footer.copyright\">Todos los derechos reservados</span>.
+      &copy; <span id="currentYear"></span> Grupo Mexcla y Asociados. Todos los derechos reservados.
     </div>
   </footer>
 
@@ -218,5 +244,4 @@
     (function(){ var el=document.getElementById('currentYear'); if(el) el.textContent = new Date().getFullYear(); })();
   </script>
 </body>
-
 </html>
