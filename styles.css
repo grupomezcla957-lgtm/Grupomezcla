@@ -318,7 +318,7 @@
   grid-template-columns: repeat(5, 1fr);
   align-items: start;
   justify-items: center;
-  width: 65%;              
+  width: 62%;              
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -337,7 +337,7 @@
   margin-top: 15px;
   font-weight: 900;
   font-size: 14px;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
   text-align: center;
@@ -473,6 +473,3 @@
       .project-card{flex:1 1 100%}
       .project-thumb{height:200px}
     }
-  
-    
-    
